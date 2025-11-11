@@ -11,7 +11,8 @@
     "skipLibCheck": true,
      "paths": {
       "@repo/db": ["../../packages/db/index.ts"]
-    }
+    },
+      "typeRoots": ["./src/types", "./node_modules/@types"]
   },
   "include": ["src/**/*"]
 }

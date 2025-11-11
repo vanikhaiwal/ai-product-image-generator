@@ -8,18 +8,20 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@clerk/clerk-sdk-node": "^4.13.23",
+    "@clerk/backend": "^0.38.15",
+    "@clerk/express": "^1.7.48",
     "@fal-ai/client": "1.7.2",
     "@repo/db": "*",
     "cloudinary": "2.8.0",
     "cors": "2.8.5",
     "dotenv": "16.6.1",
     "express": "5.1.0",
-    "node-fetch": "3.3.2"
+    "node-fetch": "3.3.2",
+    "svix": "^1.81.0"
   },
   "devDependencies": {
     "@types/cors": "2.8.19",
-    "@types/express": "5.0.5",
+    "@types/express": "^5.0.5",
     "@types/multer": "2.0.0",
     "@types/node": "22.19.0",
     "ts-node-dev": "2.0.0",
