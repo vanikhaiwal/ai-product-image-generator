@@ -5,8 +5,9 @@ import path from "path";
 import { requireAuth } from "./middlewares/clerkAuth";
 import { errorHandler } from "./middlewares/error";
 import clerkWebhookRouter from "./routes/clerkWebhook";
+import userRoutes from "./routes/userRoutes";
 import generateRoute from "./routes/generate";
-import webhookRoute from "./routes/webhook";
+import cloudinaryWebhookRouter from "./routes/cloudinaryWebhook";
 import uploadRoute from "./routes/upload";
 
 
@@ -15,11 +16,12 @@ const app = express();
 app.use(errorHandler);
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
-app.use("/webhooks", clerkWebhookRouter);
 
+app.use("api/webhooks", clerkWebhookRouter);
 app.use("/api/generate", generateRoute);
-app.use("/api/webhook", webhookRoute);
+app.use("/api/webhook", cloudinaryWebhookRouter);
 app.use("/api/upload", uploadRoute);
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server is running ✅");
