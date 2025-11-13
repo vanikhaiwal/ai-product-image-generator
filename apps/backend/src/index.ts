@@ -5,6 +5,7 @@ import path from "path";
 import { requireAuth } from "./middlewares/clerkAuth";
 import { errorHandler } from "./middlewares/error";
 import clerkWebhookRouter from "./routes/clerkWebhook";
+import falWebhook from "./routes/falWebhook";
 import userRoutes from "./routes/userRoutes";
 import generateRoute from "./routes/generate";
 import cloudinaryWebhookRouter from "./routes/cloudinaryWebhook";
@@ -22,6 +23,8 @@ app.use("/api/generate", generateRoute);
 app.use("/api/webhook", cloudinaryWebhookRouter);
 app.use("/api/upload", uploadRoute);
 app.use("/api/users", userRoutes);
+app.use("/api/webhooks/fal", falWebhook);
+
 
 app.get("/", (req, res) => {
   res.send("Server is running ✅");
