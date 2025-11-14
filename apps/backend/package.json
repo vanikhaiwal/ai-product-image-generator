@@ -12,6 +12,7 @@
     "@clerk/express": "^1.7.48",
     "@fal-ai/client": "1.7.2",
     "@repo/db": "*",
+    "axios": "^1.13.2",
     "cloudinary": "2.8.0",
     "cors": "2.8.5",
     "dotenv": "16.6.1",

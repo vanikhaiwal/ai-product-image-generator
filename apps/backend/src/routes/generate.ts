@@ -52,20 +52,28 @@ router.post("/", async (req, res) => {
       data: {
         prompt,
         status: "PENDING",
-        productId: productId || null, // optional
+        productId: productId || null,
         userId,
       },
     });
 
+    
     const falResp = await startFalGeneration(prompt, generation.id);
 
+    
+    await prisma.generation.update({
+      where: { id: generation.id },
+      data: { falId: falResp.request_id },
+    });
+
+    
     return res.status(202).json({
       message: "Generation started",
       generationId: generation.id,
       falRequestId: falResp.request_id,
     });
 
-  } catch (error: any) {
+  } catch (error) {
     console.error("Generation error:", error);
     return res.status(500).json({ error: "Failed to start generation" });
   }

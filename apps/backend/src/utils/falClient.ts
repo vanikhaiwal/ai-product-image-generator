@@ -7,7 +7,7 @@ export async function startFalGeneration(prompt: string, imageId: string) {
     },
     body: JSON.stringify({
       prompt,
-      webhook_url: `${process.env.BACKEND_URL}/api/webhook/fal`,
+      webhook_url: `${process.env.BACKEND_URL}/api/webhooks/fal`,
       metadata: { generationId: imageId },
     }),
   });
