@@ -40,7 +40,7 @@ app.post("/api/webhooks", async (req: Request, res: Response) => {
     const eventType = (evt as any).type;
     const data = (evt as any).data;
 
-    console.log("✅ Clerk webhook event:", eventType);
+    console.log("Clerk webhook event:", eventType);
 
     if (eventType === "user.created") {
       const email = data.email_addresses?.[0]?.email_address ?? "";

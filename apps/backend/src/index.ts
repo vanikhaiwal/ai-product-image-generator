@@ -20,9 +20,9 @@ app.use(errorHandler);
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 
-app.use("api/webhooks", clerkWebhookRouter);
+app.use("api/clerkWebhook", clerkWebhookRouter);
 app.use("/api/generate", generateRoute);
-app.use("/api/webhook", cloudinaryWebhookRouter);
+app.use("/api/cloudinaryWebhook", cloudinaryWebhookRouter);
 app.use("/api/upload", uploadRoute);
 app.use("/api/users", userRoutes);
 app.use("/api/generate/status", statusRoute);

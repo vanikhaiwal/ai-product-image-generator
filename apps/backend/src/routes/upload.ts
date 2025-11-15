@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    const { image } = req.body; // can be base64 or URL
+    const { image } = req.body; 
     if (!image) return res.status(400).json({ error: "No image provided" });
 
     const uploadedUrl = await uploadToCloudinary(image);
