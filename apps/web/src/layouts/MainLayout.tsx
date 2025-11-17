@@ -1,24 +1,23 @@
+import { Link } from "react-router-dom";
+
 export default function MainLayout({ children }: { children: React.ReactNode }) {
+  console.log("MainLayout rendering");
+
   return (
-    <div className="min-h-screen w-full bg-[#050505] text-white relative overflow-hidden">
+    <div className="min-h-screen w-full bg-[#0B0F19] text-white flex flex-col">
 
-      {/* Starry overlay */}
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0,transparent_70%)] pointer-events-none"></div>
-
-      {/* Navbar */}
-      <nav className="flex justify-between items-center px-6 py-4 bg-black/30 backdrop-blur-lg border-b border-white/10">
-        <h1 className="text-lg font-semibold">AI Image Studio ✨</h1>
-
-        <div className="flex gap-6">
-          <a href="/" className="hover:text-purple-300">Generate</a>
-          <a href="/packs" className="hover:text-purple-300">Packs</a>
-          <a href="/history" className="hover:text-purple-300">History</a>
-        </div>
+      {/* NAVBAR */}
+      <nav className="w-full px-6 py-4 border-b border-purple-500 bg-[#111426] flex gap-6">
+        <Link to="/" className="text-purple-300 hover:text-purple-400 font-semibold">Generate</Link>
+        <Link to="/packs" className="text-purple-300 hover:text-purple-400 font-semibold">Packs</Link>
+        <Link to="/history" className="text-purple-300 hover:text-purple-400 font-semibold">History</Link>
       </nav>
 
-      <main className="relative z-10 px-6 py-10">
+      {/* MAIN CONTENT */}
+      <main className="flex-1 w-full p-6">
         {children}
       </main>
     </div>
   );
 }
+

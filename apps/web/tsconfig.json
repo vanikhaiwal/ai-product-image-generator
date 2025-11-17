@@ -1,16 +1,22 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "moduleResolution": "node",
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "./node_modules/*",
-        "../../node_modules/*",
-        "../node_modules/*"
-      ]
+      "@/*": ["src/*"]
     },
+
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
     "types": ["vite/client"]
   },
-  "include": ["src", "vite.config.ts"]
+
+  "include": ["src", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"]
 }
