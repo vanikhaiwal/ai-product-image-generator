@@ -1,6 +1,7 @@
 {
   "name": "ai-image",
   "private": true,
+  "packageManager": "npm@11.6.2",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -12,10 +13,13 @@
     "@types/express": "5.0.5",
     "@types/multer": "2.0.0",
     "@types/node": "24.9.2",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
     "prettier": "3.6.2",
     "turbo": "2.5.8",
-    "typescript": "5.9.2"
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
   },
   "workspaces": [
     "apps/*",
@@ -26,7 +30,8 @@
     "dotenv": "17.2.3",
     "express": "5.1.0",
     "multer": "2.0.2",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.9.6"
   }
 }
